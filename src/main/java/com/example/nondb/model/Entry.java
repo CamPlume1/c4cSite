@@ -7,13 +7,16 @@ public class Entry {
 
 
     private int messageId;
-    private String username;
-    private String content;
+    private final String username;
+    private final String content;
     int creationOrder;
     private int likes;
 
-    //TODO implement validity checks
+    //Constructor for entry
     public Entry(String username, String content, int messageId) {
+        if (content.isEmpty() || content.length() >= 128){
+            throw new IllegalArgumentException("Invalid Entry");
+        }
         this.username = username;
         this.content = content;
         this.likes = 0;

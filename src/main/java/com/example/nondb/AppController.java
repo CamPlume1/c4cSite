@@ -18,6 +18,10 @@ public class AppController {
 
     private List<Entry> entries;
 
+    String url;
+
+    int port;
+
     public AppController(){
         entries = new ArrayList<>();
         currentEntryNumber = 0;
